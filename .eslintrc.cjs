@@ -11,7 +11,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react-refresh', 'react', 'react-hooks', 'simple-import-sort', 'jsx-a11y'],
+  plugins: ['react-refresh', 'react', 'react-hooks', 'simple-import-sort', 'jsx-a11y', 'prettier'],
   rules: {
     'react-refresh/only-export-components': 'warn',
     indent: ['off', 2, { SwitchCase: 1 }], // 들여쓰기 몇 칸? 기본 2칸으로 하되, switch문에서는 1칸으로 지정
