@@ -14,8 +14,8 @@
 <center>
 
 |                   박현지                    |                    이동헌                     |                     박희정                      |
-| :-----------------------------------------: | :-------------------------------------------: | :---------------------------------------------: | ----------------------------------- |
-| [@HyeonJi Park](https://github.com/iamphj3) | [@DongHeon Lee](https://github.com/eastlaw80) | [@HeJung Park](https://github.com/parkheeddong) | [@Rim Na](https://github.com/R1mmm) |
+| :-----------------------------------------: | :-------------------------------------------: | :---------------------------------------------: |
+| [@HyeonJi Park](https://github.com/iamphj3) | [@DongHeon Lee](https://github.com/eastlaw80) | [@HeJung Park](https://github.com/parkheeddong) |
 |                   맡은 뷰                   |                    맡은 뷰                    |                     맡은 뷰                     |
 
 </center>
