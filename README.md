@@ -32,8 +32,7 @@
 | Programming Language | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black)                                                                                             |
 | Styling              | ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)                                                                           |
 | Data Fetching        | ![Data Fetching](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=Axios&logoColor=white)                                                                                                        |
-| State Management     | ![State Management](https://img.shields.io/badge/Recoil-State%20Management-blueviolet                                                                                                                             |
-| )                    |
+| State Management     | ![State Management](https://img.shields.io/badge/Recoil-State%20Management-blueviolet)                                                                                                                            |
 | Formatting           | ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white) ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white) |
 | Package Manager      | ![Yarn Berry](https://img.shields.io/badge/Yarn_Berry-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white)                                                                                                       |
 | Version Control      | ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)  |
