@@ -1,7 +1,11 @@
-import React from 'react';
+import styled from 'styled-components';
 
 const Landing = () => {
-  return <div>Landing 컴포넌트</div>;
+  return <St.LandingWrapper>Landing 컴포넌트</St.LandingWrapper>;
 };
 
 export default Landing;
+
+const St = {
+  LandingWrapper: styled.div``,
+};
