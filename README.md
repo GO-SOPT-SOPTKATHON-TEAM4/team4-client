@@ -26,17 +26,6 @@
 
 ### 기술 스택
 
-- Javascript
-- Styled-components
-- React
-- Recoil
-- Axios
-
-### js 라이브러리
-
-- Dayjs
-- Copy-to-clipboard
-
 | 역할                 | 종류                                                                                                                                                                                                              |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Library              | ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black)                                                                                                                |
@@ -44,10 +33,12 @@
 | Styling              | ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)                                                                           |
 | Data Fetching        | ![Data Fetching](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=Axios&logoColor=white)                                                                                                        |
 | Formatting           | ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white) ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white) |
-| Package Manager      | ![Yarn Berry](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)                                                                                                      |
+| Package Manager      | ![Yarn Berry](https://img.shields.io/badge/Yarn_Berry-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white)                                                                                                       |
 | Version Control      | ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)  |
 
----
+### js 라이브러리
+
+- ***
 
 <br/>
 
@@ -104,7 +95,7 @@ team4-client
 <details> 
 <summary> 2️⃣ 컨벤션 설정 </summary>
 
-- **✅ 커밋 컨벤션**
+### **✅ 커밋 컨벤션**
 
 | 제목     | 내용                                        |
 | -------- | ------------------------------------------- |
@@ -120,21 +111,17 @@ team4-client
 
 ---
 
-- **🍞 컴포넌트 및 함수 이름 컨벤션**
-    <aside>
+### **🍞 컴포넌트 및 함수 이름 컨벤션**
+
     🐥 **컴포넌트 생성 방식**
-    
-    - 화살표 함수 사용 `const Main = () -> {}` 
-    </aside>
-    
-    <aside>
+
+    - 화살표 함수 사용 `const Main = () -> {}`
+
     🐳  **함수 이름 컨벤션**
-    
+
     - const handle이벤트명 = () ⇒ {}
     - handleClick, handleSubmit, ...
     - Camel Case 사용
-
-    </aside>
 
 </details>
 
