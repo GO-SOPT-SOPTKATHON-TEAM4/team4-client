@@ -1,21 +1,32 @@
 <div align="center">
 
-<h2> (서비스소개,한줄) </h2>
-
-<img src=""  alt="서비스대표-이미지" />
+<h2> 참,외롭다 : 외로움 자랑 월드컵 </h2>
+    
+<img width="187" alt="서비스 대표이미지" src="https://github.com/GO-SOPT-SOPTKATHON-TEAM4/team4-client/assets/98143826/b892e5c8-205f-4283-9b0f-91d924b3c0f8">
 
 </div>
 
-<h2> (서비스)의 핵심 기능 </h2>
+<h2> " 참,외롭다 "의 핵심 기능 </h2>
 
-<h3> 1️⃣ (기능) </h3>
-<img src=""  alt="기능1-대표이미지" />
-<div ><strong> (강조단어) </strong> (기능설명)  <br/></div>
+<h3> 1️⃣ 외로움 이상형 월드컵 </h3>
+<img width="702" alt="스크린샷 2023-05-21 오전 12 18 40" src="https://github.com/GO-SOPT-SOPTKATHON-TEAM4/team4-client/assets/98143826/3e9e0341-3f36-44c0-8afc-f1ad137efdae">
 
 
-<h3> 2️⃣ (기능) </h3>
-<img src=""  alt="기능1-대표이미지" />
-<div ><strong> (강조단어) </strong> (기능설명)  <br/></div>
+<div ><strong> 누가 제일 외로운지 월드컵 : </strong> <br/>
+    다른 사람들이 올린 외로움 인증샷들 중에 누가 가장 외로워 보이는지 월드컵을 한다. 월드컵은 8강으로 구성되어 있다. 해당 월드컵에서 우승한 게시물은 URL을 복사하여 다른 사람들에게 공유할 수 있다. <br/></div>
+
+
+<h3> 2️⃣  외로움 월드컵 랭킹 리스트 </h3>
+<img width="714" alt="스크린샷 2023-05-21 오전 12 35 37" src="https://github.com/GO-SOPT-SOPTKATHON-TEAM4/team4-client/assets/98143826/32009d9a-0e02-4f8e-9ff4-95adb18395f9">
+
+<div ><strong> 월드컵 랭킹리스트 : </strong> <br/>사람들이 진행한 월드컵에서 몇번 1위했는가 기록을 바탕으로 외로움 인증샷의 전체 랭킹리스트를 1위부터 20위까지 보여준다. 랭킹리스트에서 게시물을 클릭하면 게시글을 상세페이지로 보여주며, 해당 게시물의 링크를 복사하여 공유하는 것도 가능하다.<br/></div>
+
+
+<h3> 3️⃣ 내 외로움 공유하기 </h3>
+<img width="315" alt="스크린샷 2023-05-21 오전 12 19 04" src="https://github.com/GO-SOPT-SOPTKATHON-TEAM4/team4-client/assets/98143826/edcce5b3-a263-412b-9282-3ceb5c1754dd">
+
+<div ><strong> 내 외로움도 월드컵에 공유 </strong> <br/>사용자가 직접 본인만의 외로움 인증샷을 닉네임과 한줄설명과 함께 업로드 하여, 본인도 외로움 월드컵에 참여할 수 있도록 하는 기능. 본인이 공유한 인증샷 게시글의 링크를 다른 사람에게 공유하는 것도 가능하다.<br/></div>
+
 
 
 <h2> 💙 4조 웨비들 💙 </h2>
@@ -57,13 +68,15 @@
     </tr>
   	<tr align="center">
         <td>
-            (서버연결) <br/>
+                       게시글 상세조회 : `GET` <br/>
+            게시글 토너먼트 이미지 리스트 제공 : `GET`<br/>
       </td>
        <td>
-            (서버연결) <br/>
+             게시글 업로드 조회 : `POST` <br/>
       </td>
        <td>
-            (서버연결) <br/>
+                   게시글 랭킹 리스트 조회 : `GET` <br/>
+            게시글 랭킹 업데이트 : `PATCH` <br/>
       </td>
     </tr>
 </table>
@@ -84,7 +97,7 @@
 <h2> 💡 주요 라이브러리 </h2>
 
 ```
-   
+    "react-copy-to-clipboard": "^5.1.0",
 ```
 
 <br/>
