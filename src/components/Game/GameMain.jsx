@@ -1,3 +1,4 @@
+import { IcProgress1, IcProgress2, IcProgress3, IcProgress4 } from '../../assets';
 import { useEffect, useState } from 'react';
 
 import { WORLDCUP_LIST } from '../../data/worldcupList';
@@ -10,6 +11,9 @@ const GameMain = () => {
   const [gameCnt, setGameCnt] = useState(1);
   const [isOver, setIsOver] = useState(false);
   const [round, setRound] = useState('8강');
+
+  const PROGRESSBAR_ICON = [IcProgress1, IcProgress2, IcProgress3, IcProgress4];
+  const [progressbar, setProgressbar] = useState(PROGRESSBAR_ICON[0]);
 
   useEffect(() => {
     setWordcupList(WORLDCUP_LIST);
@@ -44,12 +48,16 @@ const GameMain = () => {
   const handleRound = () => {
     if (gameCnt < 4) {
       setRound('8강');
+      setProgressbar(PROGRESSBAR_ICON[0]);
     } else if (gameCnt >= 4 && gameCnt < 6) {
       setRound('4강');
+      setProgressbar(PROGRESSBAR_ICON[1]);
     } else if (gameCnt >= 6 && gameCnt < 7) {
       setRound('2강');
+      setProgressbar(PROGRESSBAR_ICON[2]);
     } else if (gameCnt >= 7) {
       setRound('우승');
+      setProgressbar(PROGRESSBAR_ICON[3]);
     }
   };
 
@@ -58,6 +66,7 @@ const GameMain = () => {
       <h1 className="title">가장 외로운 사람은?</h1>
       <p>
         {round}
+        {progressbar}
         {/* {gameCnt}/{WORLDCUP_LIST.length} */}
       </p>
       {displays.map(display => {
