@@ -7,6 +7,7 @@ import RankingDetailPage from './pages/RankingDetailPage';
 import RankingPage from './pages/RankingPage';
 import { RecoilRoot } from 'recoil';
 import { Suspense } from 'react';
+import PostPage from './pages/PostPage';
 
 const Router = () => {
   return (
@@ -19,6 +20,7 @@ const Router = () => {
             <Route path="/gameresult" element={<GameResultPage />} />
             <Route path="/ranking" element={<RankingPage />} />
             <Route path="/detail:postId" element={<RankingDetailPage />} />
+            <Route path="/post" element={<PostPage />} />
           </Routes>
         </Suspense>
       </RecoilRoot>
