@@ -1,11 +1,27 @@
 import { React, useState } from 'react';
 
 import CopyToClipboard from 'react-copy-to-clipboard';
-import { WORLDCUP_LIST } from '../../data/worldcupList';
+import { getPostDetail } from '../../lib/api';
 import styled from 'styled-components';
+import { useParams } from 'react-router-dom';
 
 const RankingDetail = () => {
-  const [detailInfo, setDetailInfo] = useState(WORLDCUP_LIST[0]);
+  const [detailInfo, setDetailInfo] = useState({});
+  const { postId } = useParams();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await getPostDetail(postId);
+        setDetailInfo(result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, [postId]);
+
   return (
     <St.RankingDetailWrapper>
       <h1>
@@ -15,7 +31,7 @@ const RankingDetail = () => {
       <p>{detailInfo.comment}</p>
 
       <CopyToClipboard
-        text={`${window.location.host}/gameresult`}
+        text={`${window.location.host}/result/${postId}`}
         onCopy={() => alert('링크가 클립보드에 복사되었어요!')}
       >
         <button type="button">URL 복사하기</button>
