@@ -1,5 +1,6 @@
 import { React, useState } from 'react';
 
+import CopyToClipboard from 'react-copy-to-clipboard';
 import { WORLDCUP_LIST } from '../../data/worldcupList';
 import styled from 'styled-components';
 
@@ -12,7 +13,13 @@ const RankingDetail = () => {
         {detailInfo.nickname}
       </h1>
       <p>{detailInfo.comment}</p>
-      <button type="button">URL 복사하기</button>
+
+      <CopyToClipboard
+        text={`${window.location.host}/gameresult`}
+        onCopy={() => alert('링크가 클립보드에 복사되었어요!')}
+      >
+        <button type="button">URL 복사하기</button>
+      </CopyToClipboard>
     </St.RankingDetailWrapper>
   );
 };
