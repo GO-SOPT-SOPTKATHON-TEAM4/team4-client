@@ -2,8 +2,8 @@ import { client } from './axios';
 
 // 게시글 토너먼트 이미지 제공 API
 export const getWorldcupList = async () => {
+  console.log('데이터 요청');
   try {
-    console.log('데이터 요청');
     const { data } = await client.get('/api/posts/tournament');
     console.log(data);
     if (data.status === 200) {
