@@ -8,6 +8,7 @@ import { RecoilRoot } from 'recoil';
 import { Suspense } from 'react';
 import WinnerPage from './pages/WinnerPage';
 import PostPage from './pages/PostPage';
+import PostCompletePage from './pages/PostCompletePage';
 
 const Router = () => {
   return (
@@ -23,6 +24,7 @@ const Router = () => {
             <Route path="/ranking" element={<RankingPage />} />
             <Route path="/detail:postId" element={<RankingDetailPage />} />
             <Route path="/post" element={<PostPage />} />
+            <Route path="/postcomplete" element={<PostCompletePage />} />
           </Routes>
         </Suspense>
       </RecoilRoot>

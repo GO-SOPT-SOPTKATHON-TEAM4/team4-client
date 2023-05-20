@@ -49,14 +49,13 @@ const Post = () => {
     formData.append('description', description);
     try {
       const url = 'http://서버주소/게시글_생성_엔드포인트';
-      q;
       const response = await axios.post(url, formData);
 
       console.log(response.data);
     } catch (error) {
       console.error(error);
     }
-    navigate('/'); //포스트 후에 홈페이지로 이동 나중에 url 고치면 됨
+    navigate('/postcomplete'); //포스트 후에 홈페이지로 이동 나중에 url 고치면 됨
   };
 
   return (
