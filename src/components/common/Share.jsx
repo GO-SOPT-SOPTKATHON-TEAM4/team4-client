@@ -6,7 +6,7 @@ import { getPostDetail } from '../../lib/api';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 
-const RankingDetail = () => {
+const Share = () => {
   const [detailInfo, setDetailInfo] = useState({});
   const { postId } = useParams();
 
@@ -28,13 +28,14 @@ const RankingDetail = () => {
   return (
     <St.RankingDetailWrapper>
       <h1>
-        1<br />
+        공유페이지
+        <br />
         {detailInfo.nickname}
       </h1>
       <p>{detailInfo.comment}</p>
 
       <CopyToClipboard
-        text={`${window.location.host}/share/${postId}`}
+        text={`${window.location.host}/detail/${postId}`}
         onCopy={() => alert('링크가 클립보드에 복사되었어요!')}
       >
         <button type="button">URL 복사하기</button>
@@ -43,7 +44,7 @@ const RankingDetail = () => {
   );
 };
 
-export default RankingDetail;
+export default Share;
 
 const St = {
   RankingDetailWrapper: styled.div`

@@ -7,6 +7,7 @@ import PostPage from './pages/PostPage';
 import RankingDetailPage from './pages/RankingDetailPage';
 import RankingPage from './pages/RankingPage';
 import { RecoilRoot } from 'recoil';
+import SharePage from './pages/SharePage';
 import { Suspense } from 'react';
 import WinnerPage from './pages/WinnerPage';
 
@@ -24,6 +25,7 @@ const Router = () => {
             <Route path="/ranking" element={<RankingPage />} />
             <Route path="/detail/:postId" element={<RankingDetailPage />} />
             <Route path="/post" element={<PostPage />} />
+            <Route path="/share/:postId" element={<SharePage />} />
           </Routes>
         </Suspense>
       </RecoilRoot>
