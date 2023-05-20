@@ -82,6 +82,7 @@ export default WinnerPage;
 const St = {
     WinnerWrapper: styled.div`
     display: flex;
+    width: 100vw;
     flex-direction: column;
     justify-content: center;
     align-items: center;
