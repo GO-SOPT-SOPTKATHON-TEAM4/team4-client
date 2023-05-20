@@ -16,7 +16,8 @@ const RankingCard = postData => {
   //   useState(() => {
 
   //   }, [rankingData]);
-
+  const [rankingData, setRankingData] = useState(postData.postData);
+  //console.log(rankingData);
   return (
     <St.RankingCardWrapper
       onClick={() => {
