@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 
 import { WORLDCUP_LIST } from '../../data/worldcupList';
+import { resultState } from '../../recoil/atom';
 import styled from 'styled-components';
+import { useRecoilState } from 'recoil';
 
 const GameMain = () => {
   const [wordcupList, setWordcupList] = useState([]);
   const [displays, setDisplays] = useState([]);
   const [winners, setWinners] = useState([]);
   const [gameCnt, setGameCnt] = useState(1);
+  const [resultData, setResultData] = useRecoilState(resultState);
 
   useEffect(() => {
     setWordcupList(WORLDCUP_LIST);
@@ -30,7 +33,14 @@ const GameMain = () => {
       setWordcupList(wordcupList.slice(2));
     }
     setGameCnt(prev => prev + 1);
+
+    if (gameCnt === WORLDCUP_LIST.length) {
+      setResultData(winners[winners.length - 1]);
+    }
   };
+  console.log(resultData);
+
+  const handleGameOver = () => {};
 
   return (
     <St.GameMainWrapper>

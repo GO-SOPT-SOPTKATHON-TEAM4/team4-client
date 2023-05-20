@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import GameResultPage from './pages/GameResultPage';
 import HomePage from './pages/GamePage';
 import LandingPage from './pages/LandingPage';
 import { RecoilRoot } from 'recoil';
@@ -13,6 +14,7 @@ const Router = () => {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/game" element={<HomePage />} />
+            <Route path="/gameresult" element={<GameResultPage />} />
           </Routes>
         </Suspense>
       </RecoilRoot>
