@@ -42,8 +42,6 @@ const RankingCard = postData => {
 export default RankingCard;
 
 const St = {
-  FirstRanking: styled.div``,
-
   RankingCardWrapper: styled.div`
     display: flex;
     position: relative;
@@ -51,7 +49,6 @@ const St = {
     width: 34.3rem;
     height: 7rem;
     padding: 0.8rem;
-
     border-radius: 1.6rem;
     background-color: white;
 

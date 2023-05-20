@@ -24,5 +24,13 @@ const St = {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+
+    & > :first-child {
+      margin-top: 6.9rem;
+    }
+
+    & > :last-child {
+      margin-bottom: 2.5rem;
+    }
   `,
 };
