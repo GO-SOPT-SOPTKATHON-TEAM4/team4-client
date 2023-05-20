@@ -27,6 +27,21 @@ const St = {
     justify-content: center;
     align-items: center;
 
+    & > p {
+      font-family: 'UhBeemysen';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 22px;
+    }
+    & > h1 {
+      font-family: 'UhBeemysen';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 22px;
+    }
+
     & > button {
       border: none;
       background: transparent;
@@ -37,5 +52,15 @@ const St = {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    & > p {
+      font-family: 'Pretendard';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 22px;
+      text-align: center;
+      letter-spacing: -0.408px;
+    }
   `,
 };
