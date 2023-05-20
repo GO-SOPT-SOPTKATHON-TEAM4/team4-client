@@ -1,7 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import GameResultPage from './pages/GameResultPage';
 import HomePage from './pages/GamePage';
 import LandingPage from './pages/LandingPage';
+import PostPage from './pages/PostPage';
 import RankingDetailPage from './pages/RankingDetailPage';
 import RankingPage from './pages/RankingPage';
 import { RecoilRoot } from 'recoil';
@@ -22,7 +24,7 @@ const Router = () => {
             <Route path="/game" element={<HomePage />} />
             <Route path="/gameresult" element={<GameResultPage />} />
             <Route path="/ranking" element={<RankingPage />} />
-            <Route path="/detail:postId" element={<RankingDetailPage />} />
+            <Route path="/detail" element={<RankingDetailPage />} />
             <Route path="/post" element={<PostPage />} />
             <Route path="/postcomplete" element={<PostCompletePage />} />
           </Routes>
