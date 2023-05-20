@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import PostModal from './PostModal';
 
 const Post = () => {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ const Post = () => {
   const [nickname, setNickname] = useState('');
   const [description, setDescription] = useState('');
   const [previewURL, setPreviewURL] = useState('');
+  const [showModal, setShowModal] = useState(false); // 모달 표시 여부
 
   const handleFileChange = e => {
     const file = e.target.files[0];
@@ -22,7 +24,18 @@ const Post = () => {
     reader.readAsDataURL(file);
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
+    e.preventDefault();
+    setShowModal(true);
+  };
+
+  const handleCancel = () => {
+    setShowModal(false);
+  };
+
+  //모달 확인 누르면 POST
+  const handleConfirm = async e => {
+    setShowModal(false);
     e.preventDefault();
 
     const formData = new FormData();
@@ -42,28 +55,40 @@ const Post = () => {
   };
 
   return (
-    <St.PostWrapper>
-      <h1>외로움 공유</h1>
-      <St.PreviewWrappper>
-        {previewURL && <img src={previewURL} alt="미리보기" />}
-      </St.PreviewWrappper>
-      <form onSubmit={handleSubmit}>
-        <input type="file" accept="image/*" onChange={handleFileChange} />
-        <input
-          type="text"
-          value={nickname}
-          onChange={e => setNickname(e.target.value)}
-          placeholder="닉네임"
-        />
-        <input
-          type="text"
-          value={description}
-          onChange={e => setDescription(e.target.value)}
-          placeholder="한 줄 사진 설명"
-        />
-        <button type="submit">공유하기</button>
-      </form>
-    </St.PostWrapper>
+    <>
+      <button onClick={() => navigate(-1)}>뒤로가기</button>
+      <St.PostWrapper>
+        <h1>나도 이만큼 참 외롭다.....</h1>
+        <h3>사진, 내용, 닉네임을 등록하고 외로움 월드컵에 참여해보세요</h3>
+        <St.PreviewWrappper>
+          {previewURL && <img src={previewURL} alt="미리보기" />}
+        </St.PreviewWrappper>
+        <form onSubmit={handleSubmit}>
+          <input type="file" accept="image/*" onChange={handleFileChange} />
+          <p>닉네임 :</p>
+          <input
+            id="inputNickname"
+            type="text"
+            value={nickname}
+            onChange={e => setNickname(e.target.value)}
+            maxLength="10"
+            placeholder="10자 내로 입력해주세요."
+          />
+          <p>내용 :</p>
+          <input
+            id="inputDescription"
+            type="text"
+            value={description}
+            onChange={e => setDescription(e.target.value)}
+            maxLength="20"
+            placeholder="20자 내로 입력해주세요."
+          />
+          <p>등록후에는 삭제가 불가능합니다.</p>
+          <button type="submit">등록하기</button>
+        </form>
+        <PostModal show={showModal} onCancel={handleCancel} onConfirm={handleConfirm} />
+      </St.PostWrapper>
+    </>
   );
 };
 
@@ -83,10 +108,16 @@ const St = {
     }
   `,
   PreviewWrappper: styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 15rem;
     height: 15rem;
+    background-color: gray;
     img {
       height: 100%;
+      width: 100%;
+      object-fit: contain;
     }
   `,
 };
