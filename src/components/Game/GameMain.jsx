@@ -9,6 +9,7 @@ const GameMain = () => {
   const [winners, setWinners] = useState([]);
   const [gameCnt, setGameCnt] = useState(1);
   const [isOver, setIsOver] = useState(false);
+  const [round, setRound] = useState('8강');
 
   useEffect(() => {
     setWordcupList(WORLDCUP_LIST);
@@ -31,20 +32,33 @@ const GameMain = () => {
       setWordcupList(wordcupList.slice(2));
     }
     setGameCnt(prev => prev + 1);
+    handleRound();
 
     if (gameCnt === WORLDCUP_LIST.length) {
       setIsOver(true);
     }
   };
 
-  const handleGameOver = () => {};
   if (isOver) return;
+
+  const handleRound = () => {
+    if (gameCnt < 4) {
+      setRound('8강');
+    } else if (gameCnt >= 4 && gameCnt < 6) {
+      setRound('4강');
+    } else if (gameCnt >= 6 && gameCnt < 7) {
+      setRound('2강');
+    } else if (gameCnt >= 7) {
+      setRound('우승');
+    }
+  };
 
   return (
     <St.GameMainWrapper>
       <h1 className="title">가장 외로운 사람은?</h1>
       <p>
-        {gameCnt}/{WORLDCUP_LIST.length}
+        {round}
+        {/* {gameCnt}/{WORLDCUP_LIST.length} */}
       </p>
       {displays.map(display => {
         return (
