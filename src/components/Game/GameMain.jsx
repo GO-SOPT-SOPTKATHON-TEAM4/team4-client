@@ -4,35 +4,40 @@ import { WORLDCUP_LIST } from '../../data/worldcupList';
 import styled from 'styled-components';
 
 const GameMain = () => {
-  const [worldcupList, setWorldcupList] = useState([]);
+  const [wordcupList, setWordcupList] = useState([]);
   const [displays, setDisplays] = useState([]);
   const [winners, setWinners] = useState([]);
+  const [gameCnt, setGameCnt] = useState(1);
 
   useEffect(() => {
-    setWorldcupList(WORLDCUP_LIST);
+    setWordcupList(WORLDCUP_LIST);
     setDisplays([WORLDCUP_LIST[0], WORLDCUP_LIST[1]]);
   }, []);
 
   const clickHandler = worldcupList => () => {
-    if (worldcupList.length <= 2) {
+    if (wordcupList.length <= 2) {
       if (winners.length === 0) {
         setDisplays([worldcupList]);
       } else {
         let updatedFood = [...winners, worldcupList];
-        setWorldcupList(updatedFood);
+        setWordcupList(updatedFood);
         setDisplays([updatedFood[0], updatedFood[1]]);
         setWinners([]);
       }
-    } else if (worldcupList.length > 2) {
+    } else if (wordcupList.length > 2) {
       setWinners([...winners, worldcupList]);
-      setDisplays([worldcupList[2], worldcupList[3]]);
-      setWorldcupList(worldcupList.slice(2));
+      setDisplays([wordcupList[2], wordcupList[3]]);
+      setWordcupList(wordcupList.slice(2));
     }
+    setGameCnt(prev => prev + 1);
   };
 
   return (
     <St.GameMainWrapper>
       <h1 className="title">가장 외로운 사람은?</h1>
+      <p>
+        {gameCnt}/{WORLDCUP_LIST.length}
+      </p>
       {displays.map(display => {
         return (
           <div key={display.id} onClick={clickHandler(display)}>
