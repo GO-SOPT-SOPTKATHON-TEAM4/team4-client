@@ -5,12 +5,13 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import PostModal from './PostModal';
 import { UploadButtton, RedStar } from '../../assets';
+import { postUpload } from '../../lib/api';
 
 const Post = () => {
   const navigate = useNavigate();
   const [photo, setPhoto] = useState(null);
   const [nickname, setNickname] = useState('');
-  const [description, setDescription] = useState('');
+  const [comment, setComment] = useState('');
   const [previewURL, setPreviewURL] = useState('');
   const [showModal, setShowModal] = useState(false); // 모달 표시 여부
 
@@ -35,7 +36,7 @@ const Post = () => {
     setShowModal(false);
     setPreviewURL('');
     setNickname('');
-    setDescription('');
+    setComment('');
   };
 
   //모달 확인 누르면 POST
@@ -44,18 +45,20 @@ const Post = () => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append('photo', photo);
+    formData.append('image', photo);
     formData.append('nickname', nickname);
-    formData.append('description', description);
+    formData.append('comment', comment);
     try {
-      const url = 'http://서버주소/게시글_생성_엔드포인트';
-      const response = await axios.post(url, formData);
-
-      console.log(response.data);
+      //   const url = 'http://서버주소/게시글_생성_엔드포인트';
+      //   const response = await axios.post(url, formData);
+      const response = await postUpload(formData);
+      console.log(response);
+      if (response.status === 200) {
+        navigate(`/detail/${response.data.postId}`);
+      }
     } catch (error) {
       console.error(error);
     }
-    navigate('/postcomplete'); //포스트 후에 홈페이지로 이동 나중에 url 고치면 됨
   };
 
   return (
@@ -81,8 +84,8 @@ const Post = () => {
               <RedStar />
             </p>
             <textarea
-              value={description}
-              onChange={e => setDescription(e.target.value)}
+              value={comment}
+              onChange={e => setComment(e.target.value)}
               maxLength="20"
               placeholder="20자 내로 입력해주세요."
             />

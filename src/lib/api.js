@@ -37,16 +37,17 @@ export const getRanking = async () => {
 };
 
 // 게시글 업로드 API
-export const postUpload = async (image, nickname, comment) => {
+export const postUpload = async formData => {
   try {
-    const { data } = await client.post('/api/posts', image, nickname, comment, {
+    const { data } = await client.post('/api/posts/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
     });
-    if (data.status === 200) {
-      return data.data;
-    }
+    // if (data.status === 200) {
+    //   return data.data;
+    // }
+    return data;
   } catch (e) {
     console.error(e);
   }
