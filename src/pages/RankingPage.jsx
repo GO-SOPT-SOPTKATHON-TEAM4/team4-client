@@ -1,5 +1,6 @@
 //import Ranking from '../components/Ranking/Ranking';
 
+import Ranker from '../components/Ranking/Ranker';
 import React from 'react';
 import styled from 'styled-components';
 
