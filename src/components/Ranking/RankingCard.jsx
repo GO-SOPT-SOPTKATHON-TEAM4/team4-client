@@ -9,7 +9,7 @@ const RankingCard = postData => {
   const [rank, setLank] = useState(postData.rank);
   const [rankingData, setRankingData] = useState(postData.postData);
 
-  // const isFirstRanking = rank === 1;
+  const isFirstRanking = rank === 1;
   //   useState(() => {
   //   }, [rankingData]);
   return (
