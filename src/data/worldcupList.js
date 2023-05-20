@@ -1,6 +1,6 @@
 import { Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8 } from '../assets/img';
 
-const WORLDCUP_LIST = [
+export const WORLDCUP_LIST = [
   {
     id: 1,
     url: Img1,
