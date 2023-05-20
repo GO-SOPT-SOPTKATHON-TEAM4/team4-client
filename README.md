@@ -2,14 +2,16 @@
 
 <h2> 참,외롭다 : 외로움 자랑 월드컵 </h2>
     
-<img width="187" alt="서비스 대표이미지" src="https://github.com/GO-SOPT-SOPTKATHON-TEAM4/team4-client/assets/98143826/b892e5c8-205f-4283-9b0f-91d924b3c0f8">
+<img width="384" alt="image" src="https://github.com/GO-SOPT-SOPTKATHON-TEAM4/team4-client/assets/73213437/fcde350a-eaee-4209-ba87-4843c44d14b7">
+
 
 </div>
 
 <h2> " 참,외롭다 "의 핵심 기능 </h2>
 
 <h3> 1️⃣ 외로움 이상형 월드컵 </h3>
-<img width="702" alt="스크린샷 2023-05-21 오전 12 18 40" src="https://github.com/GO-SOPT-SOPTKATHON-TEAM4/team4-client/assets/98143826/3e9e0341-3f36-44c0-8afc-f1ad137efdae">
+<img width="296" alt="image" src="https://github.com/GO-SOPT-SOPTKATHON-TEAM4/team4-client/assets/73213437/d408c691-c97c-4072-be5c-2ebaa5352c90">
+
 
 
 <div ><strong> 누가 제일 외로운지 월드컵 : </strong> <br/>
@@ -17,13 +19,15 @@
 
 
 <h3> 2️⃣  외로움 월드컵 랭킹 리스트 </h3>
-<img width="714" alt="스크린샷 2023-05-21 오전 12 35 37" src="https://github.com/GO-SOPT-SOPTKATHON-TEAM4/team4-client/assets/98143826/32009d9a-0e02-4f8e-9ff4-95adb18395f9">
+
+<img width="286" alt="image" src="https://github.com/GO-SOPT-SOPTKATHON-TEAM4/team4-client/assets/73213437/312f9d69-8ee2-4542-942d-9be3c2ba0005">
 
 <div ><strong> 월드컵 랭킹리스트 : </strong> <br/>사람들이 진행한 월드컵에서 몇번 1위했는가 기록을 바탕으로 외로움 인증샷의 전체 랭킹리스트를 1위부터 20위까지 보여준다. 랭킹리스트에서 게시물을 클릭하면 게시글을 상세페이지로 보여주며, 해당 게시물의 링크를 복사하여 공유하는 것도 가능하다.<br/></div>
 
 
 <h3> 3️⃣ 내 외로움 공유하기 </h3>
-<img width="315" alt="스크린샷 2023-05-21 오전 12 19 04" src="https://github.com/GO-SOPT-SOPTKATHON-TEAM4/team4-client/assets/98143826/edcce5b3-a263-412b-9282-3ceb5c1754dd">
+<img width="286" alt="image" src="https://github.com/GO-SOPT-SOPTKATHON-TEAM4/team4-client/assets/73213437/402ece2b-9048-4bb3-badb-fff5540eadc3">
+
 
 <div ><strong> 내 외로움도 월드컵에 공유 </strong> <br/>사용자가 직접 본인만의 외로움 인증샷을 닉네임과 한줄설명과 함께 업로드 하여, 본인도 외로움 월드컵에 참여할 수 있도록 하는 기능. 본인이 공유한 인증샷 게시글의 링크를 다른 사람에게 공유하는 것도 가능하다.<br/></div>
 
@@ -89,7 +93,6 @@
 | Programming Language | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black)                                                                                             |
 | Styling              | ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)                                                                           |
 | Data Fetching        | ![Data Fetching](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=Axios&logoColor=white)                                                                                                        |
-| State Management     | ![State Management](https://img.shields.io/badge/recoil-f26b00?style=for-the-badge&logo=Recoil)                                                                                                                   |
 | Formatting           | ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white) ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white) |
 | Package Manager      | ![Yarn Berry](https://img.shields.io/badge/Yarn_Berry-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white)                                                                                                       |
 | Version Control      | ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)  |
@@ -149,45 +152,52 @@
 <h2> 📁 폴더 구조 </h2>
 
 ```
-team4-client
-├─ .eslintrc.cjs
-├─ .gitignore
-├─ .pnp.cjs
-├─ .pnp.loader.mjs
-├─ .prettierrc.cjs
-├─ .yarn
-├─ README.md
-├─ index.html
-├─ package.json
-├─ public
-│  └─ vite.svg
+
 ├─ src
 │  ├─ App.jsx
 │  ├─ Router.jsx
 │  ├─ assets
-│  │  ├─ ic_error.svg
-│  │  ├─ 
-│  │  └─ react.svg
+│  │  ├─ img
+│  │  │  └─ index.js
+│  │  ├─ index.js
 │  ├─ components
-│  │  ├─ Home
-│  │  │  └─ Home.jsx
+│  │  ├─ Game
+│  │  │  ├─ GameMain.jsx
+│  │  │  └─ GameResult.jsx
 │  │  ├─ Landing
 │  │  │  └─ Landing.jsx
+│  │  ├─ Post
+│  │  │  ├─ Post.jsx
+│  │  │  ├─ PostComplete.jsx
+│  │  │  └─ PostModal.jsx
+│  │  ├─ Ranking
+│  │  │  ├─ Ranker.jsx
+│  │  │  ├─ Ranking.jsx
+│  │  │  ├─ RankingCard.jsx
+│  │  │  └─ RankingDetail.jsx
+│  │  ├─ Winner
+│  │  │  └─ Winner.jsx
 │  │  └─ common
-│  │     └─ Header.jsx
+│  │     ├─ Header.jsx
+│  │     └─ Share.jsx
+│  ├─ data
+│  │  └─ worldcupList.js
 │  ├─ lib
+│  │  ├─ api.js
 │  │  └─ axios.js
 │  ├─ main.jsx
 │  ├─ pages
-│  │  ├─ HomePage.jsx
-│  │  └─ LandingPage.jsx
-│  ├─ recoil
-│  │  ├─ atom.js
-│  │  └─ selector.js
+│  │  ├─ GamePage.jsx
+│  │  ├─ GameResultPage.jsx
+│  │  ├─ LandingPage.jsx
+│  │  ├─ PostCompletePage.jsx
+│  │  ├─ PostPage.jsx
+│  │  ├─ RankingDetailPage.jsx
+│  │  ├─ RankingPage.jsx
+│  │  ├─ SharePage.jsx
+│  │  └─ WinnerPage.jsx
 │  └─ styles
-│     └─ GlobalStyle.jsx
-├─ vite.config.js
-└─ yarn.lock
+      └─ GlobalStyle.jsx
 ```
 
 
