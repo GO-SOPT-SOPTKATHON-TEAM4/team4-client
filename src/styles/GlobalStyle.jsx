@@ -143,6 +143,15 @@ ${reset}
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable.css");
 
+@font-face {
+font-family: 'UhBeemysen';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeemysen.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable.css");
+
 #root, body, html {
     max-width: 37.5rem;
     height: 100vh;
