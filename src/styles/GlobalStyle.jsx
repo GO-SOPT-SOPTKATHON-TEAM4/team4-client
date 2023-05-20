@@ -143,6 +143,15 @@ ${reset}
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable.css");
 
+@font-face {
+font-family: 'UhBeemysen';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeemysen.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable.css");
+
 #root, body, html {
     max-width: 37.5rem;
     height: 100vh;
@@ -150,7 +159,7 @@ ${reset}
     overflow-y: auto;
     -ms-overflow-style: none; /* 인터넷 익스플로러 */
     scrollbar-width: none; /* 파이어폭스 */
-    
+    background-color: #FFE470;
 }
 #root::-webkit-scrollbar {
     display: none; /* 크롬, 사파리, 오페라, 엣지 */
