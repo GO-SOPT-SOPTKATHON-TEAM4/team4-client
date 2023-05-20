@@ -9,14 +9,9 @@ const RankingCard = postData => {
   const [rank, setLank] = useState(postData.rank);
   const [rankingData, setRankingData] = useState(postData.postData);
 
-  const isFirstRanking = rank === 1;
-
-  //   console.log(rankingData);
-
+  // const isFirstRanking = rank === 1;
   //   useState(() => {
-
   //   }, [rankingData]);
-  //console.log(rankingData);
   return (
     <St.RankingCardWrapper
       onClick={() => {

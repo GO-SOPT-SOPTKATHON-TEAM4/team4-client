@@ -3,13 +3,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import GameResultPage from './pages/GameResultPage';
 import HomePage from './pages/GamePage';
 import LandingPage from './pages/LandingPage';
-import PostPage from './pages/PostPage';
 import RankingDetailPage from './pages/RankingDetailPage';
 import RankingPage from './pages/RankingPage';
 import { RecoilRoot } from 'recoil';
 import SharePage from './pages/SharePage';
 import { Suspense } from 'react';
 import WinnerPage from './pages/WinnerPage';
+import PostPage from './pages/PostPage';
+import PostCompletePage from './pages/PostCompletePage';
 
 const Router = () => {
   return (
@@ -26,6 +27,7 @@ const Router = () => {
             <Route path="/detail/:postId" element={<RankingDetailPage />} />
             <Route path="/post" element={<PostPage />} />
             <Route path="/share/:postId" element={<SharePage />} />
+            <Route path="/postcomplete" element={<PostCompletePage />} />
           </Routes>
         </Suspense>
       </RecoilRoot>
