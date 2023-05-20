@@ -1,25 +1,31 @@
 import React from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import 기안84 from '../assets/기안84.png';
 
 const WinnerPage = () => {
 
-    
+
   return (
     <>
       <St.WinnerWrapper>
         <St.WinnerHeader> 우승했어요 ! </St.WinnerHeader>
         <St.WinnerImage src ={기안84} />
-        <St.Ranking> 
+        <St.BackToWorldcup>
             <button type='button'>
-              랭킹 보기
+              랜덤 월드컵 투표 참여하기
             </button>
-        </St.Ranking>
+        </St.BackToWorldcup>
         <St.ShareMyImage>
             <button type='button'>
               내 사진 공유하기
             </button>
         </St.ShareMyImage>
+        <St.Ranking> 
+            <button type='button'>
+              랭킹 보기
+            </button>
+        </St.Ranking>
       </St.WinnerWrapper>
     </>
   );
@@ -48,6 +54,10 @@ const St = {
     WinnerImage : styled.img`
     display: flex;
     width: 30rem;
+    `,
+
+    BackToWorldcup : styled.section`
+    display: flex;
     `,
 
     Ranking : styled.section`
