@@ -1,0 +1,1 @@
+const WORLDCUP_LIST = [{}];
