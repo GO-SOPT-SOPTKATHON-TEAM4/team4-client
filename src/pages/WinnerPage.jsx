@@ -2,17 +2,30 @@ import React from 'react';
 import axios from 'axios';
 import rectangleIcon from '../assets/rectangleIcon.svg';
 import styled from 'styled-components';
+import {useNavigate} from 'react-router-dom';
 import {useRecoilState} from 'recoil';
 import 기안84 from '../assets/기안84.png';
 
 const WinnerPage = () => {
 
+    const navigate = useNavigate();
+
+    const onClickPost = () => {
+        navigate(`/post`);
+    }
+
+    const onClickRank = () => {
+        navigate(`/ranking`);
+    }
+    const onClickGame = () => {
+        navigate(`/game`);
+    }
 
   return (
     <>
       <St.WinnerWrapper>
 
-        <St.BackToWorldcup>
+        <St.BackToWorldcup onClick = {onClickGame}>
             <button type='button'>
               다시 투표하기
             </button>
@@ -37,12 +50,12 @@ const WinnerPage = () => {
         </St.ShareUrl>
 
         <St.BtnWrapper>
-            <St.ShareMyImage>
+            <St.ShareMyImage onClick = {onClickPost}>
                 <button type='button'>
                 내 외로움 공유하기
                 </button>
             </St.ShareMyImage>
-            <St.Ranking> 
+            <St.Ranking onClick = {onClickRank}> 
                 <button type='button'>
                 외로움 랭킹 확인하기
                 </button>

@@ -166,7 +166,7 @@ team4-client
 │  ├─ Router.jsx
 │  ├─ assets
 │  │  ├─ ic_error.svg
-│  │  ├─ index.js
+│  │  ├─ 
 │  │  └─ react.svg
 │  ├─ components
 │  │  ├─ Home

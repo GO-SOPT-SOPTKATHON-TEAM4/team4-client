@@ -6,7 +6,7 @@ const RankingCard = postData => {
   const navigate = useNavigate();
 
   const [rankingData, setRankingData] = useState(postData.postData);
-  console.log(rankingData);
+  //console.log(rankingData);
   return (
     <div
       onClick={() => {
