@@ -17,7 +17,7 @@ const Share = () => {
     const getDetailData = async () => {
       try {
         const result = await getPostDetail(postId);
-        console.log(result);
+        // console.log(result);
         setDetailInfo(result);
       } catch (error) {
         console.error(error);
