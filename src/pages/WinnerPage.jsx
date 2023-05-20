@@ -1,6 +1,7 @@
+import { React, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import React from 'react';
+import CopyToClipboard from 'react-copy-to-clipboard';
 import axios from 'axios';
 import barIcon from '../assets/barIcon.svg';
 import blackBtn from '../assets/blackBtn.svg';
@@ -9,10 +10,10 @@ import rectangleIcon from '../assets/rectangleIcon.svg';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
 import winnerIcon from '../assets/winnerIcon.svg';
-import 기안84 from '../assets/기안84.png';
 
 const WinnerPage = () => {
   const navigate = useNavigate();
+  const [showToast, setShowToast] = useState(false);
 
   const location = useLocation();
   const winnerDisplay = location.state?.winnerDisplay;
@@ -29,6 +30,12 @@ const WinnerPage = () => {
     navigate(`/game`);
   };
 
+  const handleCopyUrl = () => {
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false); // Reset the showToast state to false after 1 second
+    }, 2000);
+  };
   return (
     <>
       <St.WinnerWrapper>
@@ -55,25 +62,29 @@ const WinnerPage = () => {
 
         <St.BtnWrapper>
           <St.ShareUrl>
-            <button type="button">
-              <h2> URL 복사하기 </h2>
-            </button>
+            <CopyToClipboard
+              text={`${window.location.host}/share/${winnerDisplay.postId}`}
+              onCopy={handleCopyUrl}
+            >
+              <button type="button">
+                <h2> URL 복사하기 </h2>
+              </button>
+            </CopyToClipboard>
+            {showToast && <St.ToastMessage>URL이 복사되었습니다</St.ToastMessage>}
           </St.ShareUrl>
 
           <St.BarImg>
             <img src={barIcon} alt="bar" />
           </St.BarImg>
 
-          <St.RankingBtn onClick={onClickPost}>
+          <St.RankingBtn onClick={onClickRank}>
             <button type="button">
               <h3> 외로움 랭킹 확인하기 </h3>
             </button>
           </St.RankingBtn>
 
-          <St.UploadBtn onClick={onClickRank}>
-            <button type="button">
-              <h3> 내 외로움 등록하기 </h3>
-            </button>
+          <St.UploadBtn onClick={onClickPost}>
+            <button type="button">내 외로움 등록하기</button>
           </St.UploadBtn>
         </St.BtnWrapper>
       </St.WinnerWrapper>
@@ -84,6 +95,23 @@ const WinnerPage = () => {
 export default WinnerPage;
 
 const St = {
+  ToastMessage: styled.div`
+    position: fixed;
+    bottom: 5rem;
+    opacity: 0.9;
+    background-color: #333;
+    color: #fff;
+    padding: 1.4rem 2.6rem;
+    border-radius: 2.4rem;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.5px;
+  `,
   WinnerWrapper: styled.div`
     display: flex;
     flex-direction: column;

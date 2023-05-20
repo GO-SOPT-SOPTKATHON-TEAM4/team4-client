@@ -1,11 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import RankingCard from '../components/Ranking/RankingCard';
-import { WORLDCUP_LIST } from '../data/worldcupList';
+import { getRanking } from '../lib/api';
 import styled from 'styled-components';
 
 const RankingPage = () => {
-  const [rankingList, setRankingList] = useState(WORLDCUP_LIST);
+  const [rankingList, setRankingList] = useState([]);
+
+  useEffect(() => {
+    const getRankingData = async () => {
+      try {
+        const result = await getRanking();
+        setRankingList(result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    getRankingData();
+  }, []);
 
   return (
     <St.RankingListWrapper>
