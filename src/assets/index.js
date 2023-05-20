@@ -5,3 +5,5 @@ export { ReactComponent as IcProgress3 } from './ic_progress_3.svg'; // svg expo
 export { ReactComponent as IcLogo } from './ic_logo.svg';
 export { ReactComponent as IcMainLogo } from './ic_mainlogo.svg';
 export { ReactComponent as IcRankingBg } from './ic_rankingBg.svg';
+export { ReactComponent as IcSelected } from './ic_selected.svg';
+export { ReactComponent as IcUnSelected } from './ic_unselected.svg';

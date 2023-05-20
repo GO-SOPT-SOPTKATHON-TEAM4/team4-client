@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 const RankingDetail = () => {
   const [detailInfo, setDetailInfo] = useState({});
   const { postId } = useParams();
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     // const fetchData = async () => {
@@ -25,6 +26,13 @@ const RankingDetail = () => {
   }, [postId]);
   console.log(detailInfo);
 
+  const handleCopyUrl = () => {
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false); // Reset the showToast state to false after 1 second
+    }, 2000);
+  };
+
   return (
     <St.RankingDetailWrapper>
       <h1>
@@ -33,12 +41,10 @@ const RankingDetail = () => {
       </h1>
       <p>{detailInfo.comment}</p>
 
-      <CopyToClipboard
-        text={`${window.location.host}/share/${postId}`}
-        onCopy={() => alert('링크가 클립보드에 복사되었어요!')}
-      >
+      <CopyToClipboard text={`${window.location.host}/share/${postId}`} onCopy={handleCopyUrl}>
         <button type="button">URL 복사하기</button>
       </CopyToClipboard>
+      {showToast && <St.ToastMessage>URL이 복사되었습니다</St.ToastMessage>}
     </St.RankingDetailWrapper>
   );
 };
@@ -59,5 +65,22 @@ const St = {
   DisplayImg: styled.img`
     width: 100%;
     height: 30rem;
+  `,
+  ToastMessage: styled.div`
+    position: fixed;
+    bottom: 5rem;
+    opacity: 0.9;
+    background-color: #333;
+    color: #fff;
+    padding: 1.4rem 2.6rem;
+    border-radius: 2.4rem;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.5px;
   `,
 };
