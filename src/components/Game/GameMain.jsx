@@ -22,6 +22,7 @@ const GameMain = () => {
   useEffect(() => {
     const getWorldCupData = async () => {
       try {
+        console.log('getWorld');
         const result = await getWorldcupList();
         setWordcupList(result);
         setDisplays([result[0], result[1]]);
