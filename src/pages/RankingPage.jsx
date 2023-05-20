@@ -10,7 +10,7 @@ const RankingPage = () => {
   return (
     <St.RankingListWrapper>
       {rankingList.map((ranking, i) => (
-        <RankingCard key={i} postData={ranking} />
+        <RankingCard key={i} postData={ranking} rank={i + 1} />
       ))}
     </St.RankingListWrapper>
   );

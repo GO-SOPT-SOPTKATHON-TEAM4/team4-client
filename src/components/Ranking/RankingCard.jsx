@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { css, styled } from 'styled-components';
 
 import { IcRankingBg } from '../../assets';
-import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
 const RankingCard = postData => {
   const navigate = useNavigate();
-  const [rank, setLank] = useState(1);
+  const [rank, setLank] = useState(postData.rank);
   const [rankingData, setRankingData] = useState(postData.postData);
+
+  const isFirstRanking = rank === 1;
+
   //   console.log(rankingData);
 
   //   useState(() => {
@@ -19,15 +22,16 @@ const RankingCard = postData => {
       onClick={() => {
         navigate(`/detail/${rankingData.postId}`);
       }}
+      isFirstRanking={isFirstRanking}
     >
       <St.ImageWrapper>
-        <img src={rankingData.imageUrl} alt="미리보기사진" />
+        <img className="rankImg" src={rankingData.imageUrl} alt="미리보기사진" />
         <div>
-          <IcRankingBg />
-          <p>{rank}</p>
+          <IcRankingBg className="rankIcon" />
+          <p className="rankTxt">{rank}</p>
         </div>
       </St.ImageWrapper>
-      <St.Content>
+      <St.Content className="rankContent">
         <p>{rankingData.comment}</p>
         <span>{rankingData.nickname}</span>
       </St.Content>
@@ -42,6 +46,7 @@ const St = {
 
   RankingCardWrapper: styled.div`
     display: flex;
+    position: relative;
 
     width: 34.3rem;
     height: 7rem;
@@ -49,7 +54,55 @@ const St = {
 
     border-radius: 1.6rem;
     background-color: white;
+
+    ${({ isFirstRanking }) =>
+      isFirstRanking
+        ? css`
+            display: flex;
+            flex-direction: column;
+
+            height: 31rem;
+
+            & .rankImg {
+              width: 31.1rem;
+              height: 23.4rem;
+
+              position: absolute;
+              top: 1.2rem;
+              left: 1.4rem;
+            }
+
+            & .rankIcon {
+              position: absolute;
+              left: 0.3rem;
+
+              width: 5rem;
+              height: 3.3rem;
+            }
+
+            & .rankTxt {
+              position: absolute;
+              top: 0rem;
+              left: 2.6rem;
+
+              font-family: 'UhBeemysen';
+              font-style: normal;
+              font-weight: 700;
+              font-size: 32px;
+              line-height: 32px;
+              text-align: center;
+              letter-spacing: -0.025em;
+            }
+
+            & .rankContent {
+              position: absolute;
+              left: 1.4rem;
+              bottom: 1.6rem;
+            }
+          `
+        : css``};
   `,
+
   ImageWrapper: styled.div`
     display: flex;
     height: 5.4rem;
@@ -73,7 +126,7 @@ const St = {
       & > p {
         position: absolute;
         top: 0.3rem;
-        left: 1.3rem;
+        left: 1.1rem;
         color: white;
 
         font-family: 'UhBeemysen';
