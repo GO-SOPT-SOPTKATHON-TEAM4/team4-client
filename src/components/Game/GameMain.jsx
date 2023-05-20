@@ -2,6 +2,7 @@ import { IcProgress1, IcProgress2, IcProgress3 } from '../../assets';
 import { useEffect, useState } from 'react';
 
 import { WORLDCUP_LIST } from '../../data/worldcupList';
+import { getWorldcupList } from '../../lib/api';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,11 +18,19 @@ const GameMain = () => {
   const [progressbar, setProgressbar] = useState(PROGRESSBAR_ICON[0]);
 
   const navigate = useNavigate();
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setWordcupList(WORLDCUP_LIST);
-    setDisplays([WORLDCUP_LIST[0], WORLDCUP_LIST[1]]);
+    const getWorldCupData = async () => {
+      try {
+        const result = await getWorldcupList();
+        setWordcupList(result);
+        setDisplays([result[0], result[1]]);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    getWorldCupData();
   }, []);
 
   const clickHandler = worldcupList => () => {
