@@ -5,25 +5,34 @@ const PostModal = ({ show, onCancel, onConfirm }) => {
   if (!show) return null;
 
   return (
-    <St.ModalWrapper>
-      <p>
-        등록하시겠습니까? <br />
-        <span>등록 후에는 삭제가 불가능합니다.</span>
-      </p>
-      <St.ButtonWrapper>
-        <button className="cancelButton" onClick={onCancel}>
-          취소하기
-        </button>
-        <button className="confirmButton" onClick={onConfirm}>
-          등록하기
-        </button>
-      </St.ButtonWrapper>
-    </St.ModalWrapper>
+    <St.ModalContainer>
+      <St.ModalWrapper>
+        <p>
+          등록하시겠습니까? <br />
+          <span>등록 후에는 삭제가 불가능합니다.</span>
+        </p>
+        <St.ButtonWrapper>
+          <button className="cancelButton" onClick={onCancel}>
+            취소하기
+          </button>
+          <button className="confirmButton" onClick={onConfirm}>
+            등록하기
+          </button>
+        </St.ButtonWrapper>
+      </St.ModalWrapper>
+    </St.ModalContainer>
   );
 };
 
 export default PostModal;
 const St = {
+  ModalContainer: styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+  `,
   ModalWrapper: styled.div`
     position: absolute;
     top: 50%;
@@ -70,6 +79,13 @@ const St = {
       box-shadow: none;
       padding: 0;
       margin-top: 2.3rem;
+      font-family: 'Pretendard';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 14px;
+      letter-spacing: -0.025em;
+      color: #191919;
     }
     .confirmButton {
       background-color: #ffe470;
