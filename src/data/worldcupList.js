@@ -9,7 +9,7 @@ export const WORLDCUP_LIST = [
   },
   {
     postId: 2,
-    url: Img2,
+    imageUrl: Img2,
     nickname: '닉넴2',
     comment: '2번사진 한줄설명~~',
   },

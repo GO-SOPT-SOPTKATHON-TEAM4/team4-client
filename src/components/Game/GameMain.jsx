@@ -63,16 +63,16 @@ const GameMain = () => {
 
   return (
     <St.GameMainWrapper>
-      <h1 className="title">가장 외로운 사람은?</h1>
+      <h1>가장 외로운 사람은?</h1>
       <p>
         {round}
         {progressbar}
-        {/* {gameCnt}/{WORLDCUP_LIST.length} */}
       </p>
       {displays.map(display => {
         return (
-          <div key={display.id} onClick={clickHandler(display)}>
-            <St.DisplayImg src={display.url} alt={display.comment} />
+          <div key={display.postId} onClick={clickHandler(display)}>
+            <St.DisplayImg src={display.imageUrl} alt={display.comment} />
+            <p>{display.nickname}</p>
             <p>{display.comment}</p>
           </div>
         );
