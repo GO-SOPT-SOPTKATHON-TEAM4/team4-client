@@ -17,6 +17,7 @@ const GameMain = () => {
   const [progressbar, setProgressbar] = useState(PROGRESSBAR_ICON[0]);
 
   const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setWordcupList(WORLDCUP_LIST);
@@ -60,8 +61,6 @@ const GameMain = () => {
       setProgressbar(PROGRESSBAR_ICON[2]);
     } else if (gameCnt >= 7) {
       navigate('/gameresult');
-      // setRound('우승');
-      // setProgressbar(PROGRESSBAR_ICON[3]);
     }
   };
 
@@ -74,7 +73,6 @@ const GameMain = () => {
         return (
           <St.GameCard key={display.postId} onClick={clickHandler(display)}>
             <St.DisplayImg src={display.imageUrl} alt={display.comment} />
-
             <div>
               <h2>{display.nickname}</h2>
               <p>{display.comment}</p>
@@ -120,6 +118,13 @@ const St = {
     }
   `,
 
+  AfterSelect: styled.div`
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  `,
+
   GameCard: styled.div`
     width: 29.5rem;
     height: 26.2rem;
@@ -127,6 +132,7 @@ const St = {
 
     border-radius: 1.6rem;
     background-color: white;
+    position: relative;
 
     &:last-child {
       margin-bottom: 0rem;
