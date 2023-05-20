@@ -1,5 +1,12 @@
 import { Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8 } from '../assets/img';
 
+export const RANKING_DATA = {
+  postId: 2,
+  imageUrl: Img2,
+  nickname: '닉넴2',
+  comment: '2번사진 한줄설명~~',
+};
+
 export const WORLDCUP_LIST = [
   {
     postId: 1,
