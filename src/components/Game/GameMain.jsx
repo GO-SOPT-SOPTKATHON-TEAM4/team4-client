@@ -12,7 +12,7 @@ const GameMain = () => {
   const [isOver, setIsOver] = useState(false);
   const [round, setRound] = useState('8강');
 
-  const PROGRESSBAR_ICON = [IcProgress1, IcProgress2, IcProgress3, IcProgress4];
+  const PROGRESSBAR_ICON = [IcProgress1, IcProgress2, IcProgress3, null];
   const [progressbar, setProgressbar] = useState(PROGRESSBAR_ICON[0]);
 
   useEffect(() => {
@@ -63,11 +63,9 @@ const GameMain = () => {
 
   return (
     <St.GameMainWrapper>
-      <h1>가장 외로운 사람은?</h1>
-      <p>
-        {round}
-        {progressbar}
-      </p>
+      <p>{round}</p>
+      {progressbar}
+      <h1>둘 중 더 외로운 사람은...?</h1>
       {displays.map(display => {
         return (
           <div key={display.postId} onClick={clickHandler(display)}>
@@ -91,7 +89,13 @@ const St = {
     gap: 2rem;
 
     & > h1 {
-      font-size: 2rem;
+      font-family: 'UhBeemysen';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 32px;
+      text-align: center;
+      letter-spacing: -0.025em;
     }
   `,
   DisplayImg: styled.img`
