@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
 import GameResultPage from './pages/GameResultPage';
 import HomePage from './pages/GamePage';
 import LandingPage from './pages/LandingPage';
@@ -8,6 +7,7 @@ import RankingPage from './pages/RankingPage';
 import { RecoilRoot } from 'recoil';
 import { Suspense } from 'react';
 import WinnerPage from './pages/WinnerPage';
+import PostPage from './pages/PostPage';
 
 const Router = () => {
   return (
@@ -22,6 +22,7 @@ const Router = () => {
             <Route path="/gameresult" element={<GameResultPage />} />
             <Route path="/ranking" element={<RankingPage />} />
             <Route path="/detail:postId" element={<RankingDetailPage />} />
+            <Route path="/post" element={<PostPage />} />
           </Routes>
         </Suspense>
       </RecoilRoot>
