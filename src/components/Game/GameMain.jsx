@@ -1,4 +1,4 @@
-import { IcProgress1, IcProgress2, IcProgress3, IcProgress4 } from '../../assets';
+import { IcProgress1, IcProgress2, IcProgress3 } from '../../assets';
 import { useEffect, useState } from 'react';
 
 import { WORLDCUP_LIST } from '../../data/worldcupList';
