@@ -4,3 +4,4 @@ export { ReactComponent as IcProgress3 } from './ic_progress_3.svg';
 export { ReactComponent as IcProgress4 } from './ic_progress_4.svg';
 export { ReactComponent as IcLogo } from './ic_logo.svg';
 export { ReactComponent as IcMainLogo } from './ic_mainlogo.svg';
+export { ReactComponent as IcRankingBg } from './ic_rankingBg.svg';
