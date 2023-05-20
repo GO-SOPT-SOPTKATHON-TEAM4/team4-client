@@ -69,7 +69,7 @@ const St = {
   display: flex; 
   flex-direction: column;
   align-items: center;
-  
+
   margin-top: 4rem;
   margin-bottom: 0.9rem;
 
@@ -133,8 +133,6 @@ const St = {
   font-size: 16px;
   line-height: 16px;
   text-align: center;
-
-
   `,
 
   belowImg: styled.img`
