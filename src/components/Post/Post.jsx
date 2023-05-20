@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { RedStar, UploadButtton } from '../../assets';
+
 import { Navigate } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 import PostModal from './PostModal';
-import { UploadButtton, RedStar } from '../../assets';
+import axios from 'axios';
+import { postUpload } from '../../lib/api';
+import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const Post = () => {
   const navigate = useNavigate();

@@ -2,7 +2,6 @@ import { React, useEffect, useState } from 'react';
 
 import CopyToClipboard from 'react-copy-to-clipboard';
 import belowFruitImg from '../../assets/belowFruitImg.svg';
-import { RANKING_DATA } from '../../data/worldcupList';
 import { getPostDetail } from '../../lib/api';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
@@ -13,60 +12,41 @@ const RankingDetail = () => {
   const { postId } = useParams();
   const [showToast, setShowToast] = useState(false);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const result = await getPostDetail(postId);
-  //       setDetailInfo(result);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, [postId]);
   useEffect(() => {
-    // const fetchData = async () => {
-    //   try {
-    //     const result = await getPostDetail(postId);
-    //     setDetailInfo(result);
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    // };a
+    const getDetailData = async () => {
+      try {
+        const result = await getPostDetail(postId);
+        console.log(result);
+        setDetailInfo(result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-    // fetchData();
-    setDetailInfo(RANKING_DATA);
+    getDetailData();
+    // setDetailInfo(RANKING_DATA);
   }, [postId]);
   console.log(detailInfo);
 
   const handleCopyUrl = () => {
     setShowToast(true);
     setTimeout(() => {
-      setShowToast(false); // Reset the showToast state to false after 1 second
+      setShowToast(false);
     }, 2000);
   };
 
   return (
     <St.RankingDetailWrapper>
       <St.DetailWrappper>
-        <St.DisplayImg src={기안84} alt="이미지" />
-        <St.Comment>
-          설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. {/*detailInfo.comment*/}
-        </St.Comment>
-        <St.NickName>닉네임 칸입니다. 닉네임 칸이에요 {/* {detailInfo.nickname} */}</St.NickName>
-        <St.Vote
-          text={`${window.location.host}/result/${postId}`}
-          onCopy={() => alert('링크가 클립보드에 복사되었어요!')}
-        >
-          투표하러 가기
-        </St.Vote>
+        <St.DisplayImg src={detailInfo.imageUrl} alt={detailInfo.comment} />
+        <St.Comment>{detailInfo.comment}</St.Comment>
+        <St.NickName>{detailInfo.nickname}</St.NickName>
+        <CopyToClipboard text={`${window.location.host}/share/${postId}`} onCopy={handleCopyUrl}>
+          <St.Vote text={`${window.location.host}/result/${postId}`}>URL 복사하기</St.Vote>
+        </CopyToClipboard>
       </St.DetailWrappper>
 
       <St.belowImg src={belowFruitImg} />
-      <CopyToClipboard text={`${window.location.host}/share/${postId}`} onCopy={handleCopyUrl}>
-        <button type="button">URL 복사하기</button>
-      </CopyToClipboard>
       {showToast && <St.ToastMessage>URL이 복사되었습니다</St.ToastMessage>}
     </St.RankingDetailWrapper>
   );
