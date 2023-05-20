@@ -129,7 +129,7 @@
 ### 🌟 브랜치 전략
 
     main > 각자의 브랜치
-    ex ) main ← feature/hyeonji, feature/donghun, feature/hejung
+    ex ) main ← feature/hyeonji, feature/dongheon, feature/hejung
     각자의 브랜치에서 pull request 하고 main에 merge
 
 
