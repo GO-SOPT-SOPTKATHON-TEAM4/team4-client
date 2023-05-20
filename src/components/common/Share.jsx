@@ -1,14 +1,15 @@
 import { React, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
-import CopyToClipboard from 'react-copy-to-clipboard';
 import { RANKING_DATA } from '../../data/worldcupList';
 import { getPostDetail } from '../../lib/api';
 import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
 
 const Share = () => {
   const [detailInfo, setDetailInfo] = useState({});
   const { postId } = useParams();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     // const fetchData = async () => {
@@ -34,12 +35,14 @@ const Share = () => {
       </h1>
       <p>{detailInfo.comment}</p>
 
-      <CopyToClipboard
-        text={`${window.location.host}/detail/${postId}`}
-        onCopy={() => alert('링크가 클립보드에 복사되었어요!')}
+      <button
+        type="button"
+        onClick={() => {
+          navigate('/');
+        }}
       >
-        <button type="button">URL 복사하기</button>
-      </CopyToClipboard>
+        투표하러가기
+      </button>
     </St.RankingDetailWrapper>
   );
 };
