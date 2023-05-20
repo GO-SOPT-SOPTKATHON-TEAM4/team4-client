@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import barIcon from '../assets/barIcon.svg';
 import blackBtn from '../assets/blackBtn.svg';
 import grayBtn from '../assets/grayBtn.svg';
 import rectangleIcon from '../assets/rectangleIcon.svg';
@@ -35,8 +36,8 @@ const WinnerPage = () => {
         </St.BackToWorldcup>
         
         <St.Header> 
-            <h1> 이 사람이 제일....
-            <br/>참... 외롭다...... </h1>
+            <h1> 얘는 진짜
+            <br/>외로워 보인다...ㅋㅋ;; </h1>
         </St.Header>
         
         
@@ -47,25 +48,28 @@ const WinnerPage = () => {
             <h2> 닉네임 칸이에요 </h2>
         </St.WinnerInfo>
 
-        <St.ShareUrl>
-            <button type='button'>
-            <h3> URL 복사하기 </h3>
-            </button>
-        </St.ShareUrl>
-
         <St.BtnWrapper>
-            <St.ShareMyImage onClick = {onClickPost}>
-                <img src = {grayBtn} />
+            <St.ShareUrl>
                 <button type='button'>
-                <h3> 내 외로움 공유하기 </h3>
+                    <h2> URL 복사하기 </h2>
                 </button>
-            </St.ShareMyImage>
-            <St.Ranking onClick = {onClickRank}> 
-                <img src = {blackBtn} />
+            </St.ShareUrl>
+
+            <St.BarImg>
+                <img src = {barIcon} alt="bar" />
+            </St.BarImg> 
+
+            <St.RankingBtn onClick = {onClickPost}>
                 <button type='button'>
-                <h3> 외로움 랭킹 확인하기 </h3>
+                    <h3> 외로움 랭킹 확인하기 </h3>
                 </button>
-            </St.Ranking>
+            </St.RankingBtn>
+
+            <St.UploadBtn onClick = {onClickRank}> 
+                <button type='button'>
+                    <h3> 내 외로움 등록하기 </h3>
+                </button>
+            </St.UploadBtn>
         </St.BtnWrapper>
 
       </St.WinnerWrapper>
@@ -96,7 +100,7 @@ const St = {
         border: none;
         background: none;
         text-decoration: underline;
-        & < h3 {
+        h3 {
         font-family: 'Pretendard';
         font-style: normal;
         font-weight: 400;
@@ -113,6 +117,7 @@ const St = {
 
     width: 100vw;
     height: 13.3rem;
+    
     h1 {
         font-family: 'UhBeemysen';
         font-style: normal;
@@ -122,8 +127,8 @@ const St = {
         text-align: center;
         letter-spacing: -0.025em;
     }
-    
     `,
+
     
     WinnerInfo: styled.section`
     display: flex;
@@ -137,8 +142,6 @@ const St = {
         font-weight: 600;
         font-size: 16px;
         line-height: 20px;
-        /* or 125% */
-
         text-align: center;
         letter-spacing: -0.408px;
 
@@ -171,24 +174,32 @@ const St = {
         margin-top: 1.4rem;
         border-radius: 1.6rem;
     `,
+
+    BtnWrapper: styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3.5rem;
+
+    `,
     
     
     ShareUrl: styled.div`
     display : flex;
     justify-content: center;
     width: 100vw;
-    height: 15.5rem;
+    height: 5.6rem;
+    margin-top: 4rem;
+    h2 {
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: center;
 
-    h3 {
-    font-family: 'Pretendard';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 22px;
-    text-align: center;
-    }
+        }
     & > button {
-        margin-top: 4rem;
         height: 5.6rem;
         width: 26.3rem;
         border: none;
@@ -196,77 +207,61 @@ const St = {
         background-color: white;
     }
     `,
-
-    BtnWrapper: styled.div`
+    BarImg : styled.div`
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100vw;
-    height: 10.7rem;
-    `,
-    
-    Ranking : styled.section`
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 16.4rem;
-    height: 7.5rem;
-    border-radius: 37.5px;
-    background: #FFFFFF;
-    border: 1px solid #FFCE01;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-    & > img {
-        width: 1.9rem;
-        height: 1.9rem;  
-    }
-    & > button {
+    width: 100vw;
+    height: 4.9rem;
+    `,
 
-        h3 {
+    RankingBtn: styled.div`
+    display : flex;
+    justify-content: center;
+    width: 100vw;
+    height: 4.2rem;
+    
+    h3 {
         font-family: 'Pretendard';
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
         line-height: 14px;
         text-align: center;
-        }
-        background: none;
+    }
+    & > button {
+        height: 4.2rem;
+        width: 26.3rem;
         border: none;
-        margin-top: 0.3rem;
+        border-radius: 2.8rem;
+        background-color: white;
     }
     `,
 
-    ShareMyImage : styled.section`
-    display: flex;
-    flex-direction: column;
+    UploadBtn : styled.div`
+    display : flex;
     justify-content: center;
-    width: 16.4rem;
-    height: 7.5rem;
-    border-radius: 37.5px;
-    border: 1px solid #FFCE01;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-    background: #FFFFFF;
-    justify-content: center;
-    align-items: center;    
-    margin-right: 1.5rem;
-    & > img {
-        width: 1.9rem;
-        height: 1.9rem;  
-    }
-    & > button {
-        h3 {
+    width: 100vw;
+    height: 4.2rem;
+    margin-top: 0.8rem;
+    margin-bottom: 3.5rem;
+    
+    h3 {
         font-family: 'Pretendard';
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
         line-height: 14px;
         text-align: center;
-        }
-        background: none;
-        border: none;
-        margin-top: 0.3rem;
     }
-    `
+    & > button {
+        height: 4.2rem;
+        width: 26.3rem;
+        border: none;
+        border-radius: 2.8rem;
+        background-color: white;
+    }
+    `,
 
   };
   
