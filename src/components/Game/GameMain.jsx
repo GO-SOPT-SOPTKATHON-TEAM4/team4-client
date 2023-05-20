@@ -1,8 +1,8 @@
 import { IcProgress1, IcProgress2, IcProgress3 } from '../../assets';
+import { getWorldcupList, updateRanking } from '../../lib/api';
 import { useEffect, useState } from 'react';
 
 import { WORLDCUP_LIST } from '../../data/worldcupList';
-import { getWorldcupList } from '../../lib/api';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
@@ -56,7 +56,9 @@ const GameMain = () => {
     }
   };
 
-  if (isOver) return;
+  if (isOver) {
+    navigate('/winner', { state: { winnerDisplay } });
+  }
 
   const handleRound = () => {
     if (gameCnt < 4) {
@@ -69,7 +71,10 @@ const GameMain = () => {
       setRound('결승');
       setProgressbar(PROGRESSBAR_ICON[2]);
     } else if (gameCnt >= 7) {
-      navigate('/gameresult');
+      console.log(displays[0].postId);
+      const winnerDisplay = displays[0];
+      updateRanking(winnerDisplay.postId);
+      navigate('/winner', { state: { winnerDisplay } });
     }
   };
 

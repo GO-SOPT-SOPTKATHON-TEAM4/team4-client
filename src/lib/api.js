@@ -56,7 +56,8 @@ export const postUpload = async (image, nickname, comment) => {
 // 게시글 랭킹 업데이트 API
 export const updateRanking = async postId => {
   try {
-    const { data } = await client.post(`/api/posts/${postId}/ranking`);
+    const { data } = await client.patch(`/api/posts/${postId}/ranking`);
+    console.log(data);
     if (data.status === 200) {
       return data;
     }
