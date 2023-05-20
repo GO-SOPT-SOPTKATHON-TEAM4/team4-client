@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { WORLDCUP_LIST } from '../../data/worldcupList';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const GameMain = () => {
   const [wordcupList, setWordcupList] = useState([]);
@@ -14,6 +15,8 @@ const GameMain = () => {
 
   const PROGRESSBAR_ICON = [IcProgress1, IcProgress2, IcProgress3, null];
   const [progressbar, setProgressbar] = useState(PROGRESSBAR_ICON[0]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     setWordcupList(WORLDCUP_LIST);
@@ -56,8 +59,9 @@ const GameMain = () => {
       setRound('2강');
       setProgressbar(PROGRESSBAR_ICON[2]);
     } else if (gameCnt >= 7) {
-      setRound('우승');
-      setProgressbar(PROGRESSBAR_ICON[3]);
+      navigate('/gameresult');
+      // setRound('우승');
+      // setProgressbar(PROGRESSBAR_ICON[3]);
     }
   };
 
@@ -68,11 +72,14 @@ const GameMain = () => {
       <h1>둘 중 더 외로운 사람은...?</h1>
       {displays.map(display => {
         return (
-          <div key={display.postId} onClick={clickHandler(display)}>
+          <St.GameCard key={display.postId} onClick={clickHandler(display)}>
             <St.DisplayImg src={display.imageUrl} alt={display.comment} />
-            <p>{display.nickname}</p>
-            <p>{display.comment}</p>
-          </div>
+
+            <div>
+              <h2>{display.nickname}</h2>
+              <p>{display.comment}</p>
+            </div>
+          </St.GameCard>
         );
       })}
     </St.GameMainWrapper>
@@ -86,9 +93,23 @@ const St = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+
+    & > p {
+      margin-top: 2.4rem;
+      margin-bottom: 0.5rem;
+
+      font-family: 'UhBeemysen';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 22px;
+      text-align: center;
+    }
 
     & > h1 {
+      margin-top: 2.5rem;
+      margin-bottom: 3.8rem;
+
       font-family: 'UhBeemysen';
       font-style: normal;
       font-weight: 700;
@@ -98,8 +119,44 @@ const St = {
       letter-spacing: -0.025em;
     }
   `,
+
+  GameCard: styled.div`
+    width: 29.5rem;
+    height: 26.2rem;
+    margin-bottom: 4.2rem;
+
+    border-radius: 1.6rem;
+    background-color: white;
+
+    &:last-child {
+      margin-bottom: 0rem;
+    }
+
+    & > div {
+      padding: 0.8rem 1.6rem 1rem 1.6rem;
+    }
+
+    & > div > h2 {
+      font-family: 'Pretendard';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    & > div > p {
+      font-family: 'Pretendard';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  `,
+
   DisplayImg: styled.img`
     width: 100%;
-    height: 30rem;
+    height: 20rem;
+
+    border-radius: 1.6rem 1.6rem 0 0;
   `,
 };
