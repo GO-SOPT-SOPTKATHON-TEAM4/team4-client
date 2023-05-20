@@ -56,7 +56,7 @@ const GameMain = () => {
       setRound('4강');
       setProgressbar(PROGRESSBAR_ICON[1]);
     } else if (gameCnt >= 6 && gameCnt < 7) {
-      setRound('2강');
+      setRound('결승');
       setProgressbar(PROGRESSBAR_ICON[2]);
     } else if (gameCnt >= 7) {
       navigate('/gameresult');
