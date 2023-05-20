@@ -1,7 +1,7 @@
 import { IcError } from '../../assets';
 import styled from 'styled-components';
 
-const Home = () => {
+const GameMain = () => {
   return (
     <St.HomeWrapper>
       {/* svg import 예시 */}
@@ -11,7 +11,7 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default GameMain;
 
 const St = {
   HomeWrapper: styled.div``,
