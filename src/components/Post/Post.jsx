@@ -70,7 +70,7 @@ const Post = () => {
             <St.FileWrapper>
               <label htmlFor="fileUpload">
                 <UploadButtton />
-                <span>업로드하기</span>
+                <span>사진 업로드 하기</span>
               </label>
               <input id="fileUpload" type="file" accept="image/*" onChange={handleFileChange} />
             </St.FileWrapper>
@@ -204,6 +204,17 @@ const St = {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+    label > span {
+      margin-top: 1.4rem;
+      font-family: 'Pretendard';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 14px;
+      text-align: center;
+      letter-spacing: -0.5px;
+      color: #000000;
     }
     input {
       position: absolute;
