@@ -70,6 +70,13 @@ const St = {
       box-shadow: none;
       padding: 0;
       margin-top: 2.3rem;
+      font-family: 'Pretendard';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 14px;
+      letter-spacing: -0.025em;
+      color: #191919;
     }
     .confirmButton {
       background-color: #ffe470;

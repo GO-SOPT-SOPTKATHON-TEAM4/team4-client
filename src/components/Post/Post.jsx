@@ -101,7 +101,9 @@ const Post = () => {
               placeholder="10자 내로 입력해주세요."
             />{' '}
           </St.FormWrapper>
-          <St.ButtonWrapper type="submit">등록하기</St.ButtonWrapper>
+          <St.ButtonWrapper type="submit">
+            <span>등록하기</span>
+          </St.ButtonWrapper>
         </form>
         <PostModal show={showModal} onCancel={handleCancel} onConfirm={handleConfirm} />
       </St.PostWrapper>
@@ -235,5 +237,14 @@ const St = {
     margin-bottom: 3.2rem;
     height: 5.6rem;
     width: 26.3rem;
+    span {
+      font-family: 'Pretendard';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 16px;
+      text-align: center;
+      color: #191919;
+    }
   `,
 };
