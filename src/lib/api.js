@@ -4,6 +4,8 @@ import { client } from './axios';
 export const getWorldcupList = async () => {
   console.log('데이터 요청');
   try {
+    console.log('데이터 요청2');
+
     const { data } = await client.get('/api/posts/tournament');
     console.log(data);
     if (data.status === 200) {
@@ -11,6 +13,7 @@ export const getWorldcupList = async () => {
     }
     return data.data.posts;
   } catch (e) {
+    console.log('에러');
     console.error(e);
   }
 };
